@@ -5,15 +5,22 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [events, setEvents] = useState([]);
+  const [newEvents, setNewEvents] = useState([]);
 
   useEffect(() => {
     fetch("/events.json")
       .then((res) => res.json())
       .then((data) => setEvents(data));
   }, []);
+  useEffect(() => {
+    fetch("/upcomingEvents.json")
+      .then((res) => res.json())
+      .then((data) => setNewEvents(data));
+  }, []);
 
   const contextData = {
     events,
+    newEvents,
   };
 
   return (

@@ -1,5 +1,6 @@
 import Banner from "../Components/Homepage/Banner";
 import Cards from "../Components/Homepage/Cards/Cards";
+import UpcomingCards from "../Components/Homepage/Cards/UpcomingCards";
 import Footer from "../Components/Homepage/Footer";
 import Stats from "../Components/Homepage/Stats";
 
@@ -9,6 +10,7 @@ const Homepage = () => {
       <Banner></Banner>
       <Cards></Cards>
       <Stats></Stats>
+      <UpcomingCards></UpcomingCards>
       <Footer></Footer>
     </div>
   );

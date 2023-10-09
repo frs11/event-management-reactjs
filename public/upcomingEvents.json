@@ -1,0 +1,30 @@
+[
+    {
+      "id": 7,
+      "title": "Office Party",
+      "eventUrl": "office-party",
+      "image": "https://i.ibb.co/tb8c6Qc/group-friends-waiting-champagne-min.jpg",
+      "price": "$3,500",
+      "description": "Celebrate office milestones and successes with our office party planning services. Whether it's an end-of-year celebration, a product launch party, or a team-building event, we've got you covered. Our services include venue selection, thematic decor, entertainment, and a variety of catering options. Let us create a memorable and enjoyable office party for your team.",
+      "caption": "Elevate office celebrations to the next level."
+    },
+    {
+      "id": 8,
+      "title": "Graduation Party",
+      "eventUrl": "graduation-party",
+      "image": "https://i.ibb.co/m0z08zw/multinational-graduates-male-female-celebrating-graduation-university-campus-removing-their-graduati.jpg",
+      "price": "$300",
+      "description": "Celebrate your academic achievements with a graduation party that reflects your journey. Our planning services include themed decorations, photo booths, and delicious catering options. Let's make your graduation a memorable milestone.",
+      "caption": "Celebrating academic milestones in style."
+    },
+    {
+      "id": 9,
+      "title": "Holiday Party",
+      "eventUrl": "holiday-party",
+      "image": "https://i.ibb.co/4mRHcsh/people-meeting-family-reunion-min.jpg",
+      "price": "$700",
+      "description": "Spread holiday cheer with our expert holiday party planning. We'll help you create a festive atmosphere with seasonal decor, music, and delicious holiday-themed menus. Whether it's a corporate holiday party or a family gathering, we make the season merry and bright.",
+      "caption": "Bringing holiday joy to your celebrations."
+    }
+  ]
+  
