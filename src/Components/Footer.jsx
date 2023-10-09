@@ -6,7 +6,7 @@ const Footer = () => {
   const { events } = useContext(AuthContext);
   return (
     <div>
-      <footer className=" bg-base-300">
+      <footer className="bg-base-300">
         <div className="footer border p-4 lg:p-10 max-w-screen-xl mx-auto text-base-content flex justify-around">
           <nav>
             <header className="footer-title text-base lg:text-xl">
@@ -82,9 +82,9 @@ const Footer = () => {
               </a>
             </div>
           </nav>
-        </div>{" "}
+        </div>
       </footer>
-      <div className="footer footer-center p-4 bg-base-300 text-xs lg:text-base">
+      <div className="footer footer-center pb-5 -mt-2 lg:-mt-5 bg-base-300 text-xs lg:text-base">
         <aside>
           <p>
             Copyright © 2023 - All right reserved by{" "}

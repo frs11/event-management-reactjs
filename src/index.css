@@ -5,3 +5,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.headerbg
+{
+    background:url('https://i.ibb.co/TKjY8PS/birthday-celebration.jpg') , linear-gradient(#070707af,#0e0d0dc9);
+        background-blend-mode: overlay;
+        background-repeat: no-repeat;
+        background-size: cover ;
+        border: 1px solid white;
+}
