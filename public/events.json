@@ -1,10 +1,11 @@
 [
   {
     "id": 1,
-    "title": "Wedding",
+    "title": "Wedding Ceremony",
     "eventUrl": "wedding",
     "image": "https://i.ibb.co/rmcSY6z/wedding-ceremony-1.jpg",
     "price": "$5,000",
+    "booking": "Open",
     "caption": "Create magical wedding memories.",
     "description": "Make your special day truly magical with our expert wedding planning services. Our team of experienced professionals will work closely with you to bring your dream wedding to life. From selecting the perfect venue to designing stunning decor, curating a mouthwatering menu, and coordinating every detail, we ensure that your wedding day is stress-free and unforgettable. Trust us to handle the logistics, leaving you free to savor every moment with your loved ones."
   },
@@ -14,6 +15,7 @@
     "eventUrl": "birthday-party",
     "image": "https://i.ibb.co/Wpqd2ND/birthday-celebrations-1.jpg",
     "price": "$500",
+    "booking": "Close",
     "caption": "Stylish and fun birthday celebrations.",
     "description": "Celebrate your special day in style with our expert party planning services. Whether you're planning an intimate gathering or a grand extravaganza, we've got you covered. Our team will assist you in selecting the perfect theme, arranging entertainment, and crafting a menu that will delight your guests' taste buds. We take care of all the details, so you can relax and enjoy a birthday party that's as unique as you are."
   },
@@ -23,6 +25,7 @@
     "eventUrl": "anniversary",
     "image": "https://i.ibb.co/5G8wK40/aniversary-min.jpg",
     "price": "$1,200",
+    "booking": "Open",
     "caption": "Cherish your love journey.",
     "description": "Celebrate your love story with a remarkable anniversary event. Our anniversary planning services are designed to create an unforgettable evening filled with romance and joy. From selecting the most romantic venue to crafting personalized decor, arranging for live music, and creating a gourmet dining experience, we take care of every detail. Let us help you cherish your journey together with a celebration that captures the essence of your love."
   },
@@ -32,6 +35,7 @@
     "eventUrl": "engagement-party",
     "image": "https://i.ibb.co/dGrwCMs/engagementwedding-2.jpg",
     "price": "$800",
+    "booking": "Close",
     "caption": "Elegant engagement celebrations.",
     "description": "Announce your engagement in style with our expert party planning services. Our team will work closely with you to create a memorable and elegant engagement party that reflects your unique love story. From choosing the perfect venue to coordinating decorations, entertainment, and delicious catering, we handle every aspect of the event. You focus on celebrating your love while we take care of the rest."
   },
@@ -41,6 +45,7 @@
     "eventUrl": "retirement-party",
     "image": "https://i.ibb.co/vmxfn8N/office-party-1.jpg",
     "price": "$600",
+    "booking": "Open",
     "caption": "Honoring retirement milestones.",
     "description": "Bid farewell to a valued colleague or friend with a retirement party that honors their years of dedication and hard work. Our retirement party planning services ensure a memorable and heartfelt event. We help you choose a fitting theme, arrange for touching speeches, and create an atmosphere of gratitude and celebration. Let us handle the details while you cherish the retiree's accomplishments and the bright future that lies ahead."
   },
@@ -50,6 +55,7 @@
     "eventUrl": "baby-shower",
     "image": "https://i.ibb.co/smGmR5L/kid-playing-bathtub-3.jpg",
     "price": "$400",
+    "booking": "Open",
     "caption": "Joyous celebrations for growing families.",
     "description": "Welcome the upcoming arrival of a precious new addition to your family with a joyous baby shower. Our baby shower planning services take care of every detail, so you can focus on celebrating the mom-to-be. We help you choose a theme that reflects your excitement, arrange fun games and activities, and ensure a delectable menu that satisfies all tastes. Let us create a stress-free and delightful event that celebrates the love and anticipation of your growing family."
   }

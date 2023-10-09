@@ -42,7 +42,7 @@ const Login = () => {
             </div>
             <div className="form-control mt-6">
               <button className="py-2 rounded-md bg-sky-500 hover:bg-sky-400 hover:text-black text-white font-semibold">
-                Sign Up
+                Sign In
               </button>
             </div>
           </form>

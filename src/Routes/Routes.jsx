@@ -2,10 +2,10 @@ import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Layout from "../Layout/Layout";
 import Homepage from "../Pages/Homepage";
-import Cards from "../Components/Homepage/Cards/Cards";
 import Registration from "../Pages/Registration";
 import Login from "../Pages/Login";
 import UserProfile from "../Pages/UserProfile";
+import CardDetails from "../Components/Homepage/Cards/CardDetails";
 
 const customRoutes = createBrowserRouter([
   {
@@ -31,7 +31,8 @@ const customRoutes = createBrowserRouter([
       },
       {
         path: "/services/:id",
-        element: <Cards></Cards>,
+        loader: () => fetch("/events.json"),
+        element: <CardDetails></CardDetails>,
       },
     ],
   },

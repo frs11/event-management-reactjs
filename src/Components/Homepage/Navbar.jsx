@@ -8,7 +8,7 @@ const Navbar = () => {
   const { events } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handlelogin = () => {
+  const handleLogin = () => {
     navigate("/login");
   };
 
@@ -71,6 +71,34 @@ const Navbar = () => {
                 </NavLink>
               </div>
             ))}
+            <span className="block mx-1 my-1 px-2 rounded-md py-1">
+              <NavLink
+                to="/profile"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? " text-sky-700 underline rounded-md font-bold"
+                    : ""
+                }
+              >
+                Profile
+              </NavLink>
+            </span>
+            <span className="block mx-1 my-1 px-2 rounded-md py-1">
+              <NavLink
+                to="/login"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? " text-sky-700 underline rounded-md font-bold"
+                    : ""
+                }
+              >
+                Login
+              </NavLink>
+            </span>
           </ul>
         </div>
         <Link to="/" className="text-2xl">
@@ -144,7 +172,7 @@ const Navbar = () => {
         </span>
         <span className="flex mx-2 py-1 font-semibold hover:text-sky-600">
           <NavLink
-            to="/profile"
+            to="/login"
             className={({ isActive, isPending }) =>
               isPending
                 ? "pending"
@@ -153,7 +181,7 @@ const Navbar = () => {
                 : ""
             }
           >
-            Profile
+            login
           </NavLink>
         </span>
       </div>
@@ -164,7 +192,7 @@ const Navbar = () => {
           alt=""
         />
         <button
-          onClick={handlelogin}
+          onClick={handleLogin}
           className="px-5 py-2 bg-sky-500 text-white rounded-md"
         >
           Sign In

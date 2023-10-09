@@ -8,13 +8,6 @@ const UpcomingCard = ({ event2 }) => {
   const handleReadMe = () => {
     setDescriptionLength(description.length);
   };
-  //   const readMore = (
-  //     <>
-  //       <p onClick={handleReadMe} className="text-blue-600">
-  //         ...read more
-  //       </p>
-  //     </>
-  //   );
 
   return (
     <div className="bg-sky-100 rounded-sm shadow-xl">

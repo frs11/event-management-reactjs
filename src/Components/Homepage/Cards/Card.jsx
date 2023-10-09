@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Card = ({ event }) => {
   return (
@@ -14,10 +15,13 @@ const Card = ({ event }) => {
           <span className="font-semibold text-base ">{event.price}</span>
         </p>
       </div>
-      <div className="px-3 flex justify-center">
-        <button className="w-full my-5 px-5 py-2 bg-sky-500 hover:bg-sky-400 hover:text-black hover:w-[90%] text-white font-semibold rounded-md">
-          View Details
-        </button>
+      <div>
+        <Link className="px-3 flex justify-center" to={`/services/${event.id}`}>
+          {" "}
+          <button className="w-full my-5 px-5 py-2 bg-sky-500 hover:bg-sky-400 hover:text-black hover:w-[90%] text-white font-semibold rounded-md">
+            View Details
+          </button>
+        </Link>
       </div>
     </div>
   );
