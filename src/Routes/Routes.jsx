@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Layout from "../Layout/Layout";
 import Homepage from "../Pages/Homepage";
-import Cards from "../Components/cards";
+import Cards from "../Components/Homepage/Cards/Cards";
 import Registration from "../Pages/Registration";
 import Login from "../Pages/Login";
 import UserProfile from "../Pages/UserProfile";
