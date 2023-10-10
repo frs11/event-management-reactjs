@@ -87,7 +87,7 @@ const Navbar = () => {
             </span>
             <span className="block mx-1 my-1 px-2 rounded-md py-1">
               <NavLink
-                to="/login"
+                to="/user/booked-events"
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -96,7 +96,7 @@ const Navbar = () => {
                     : ""
                 }
               >
-                Login
+                Booklist
               </NavLink>
             </span>
           </ul>
@@ -172,7 +172,7 @@ const Navbar = () => {
         </span>
         <span className="flex mx-2 py-1 font-semibold hover:text-sky-600">
           <NavLink
-            to="/login"
+            to="/user/booked-events"
             className={({ isActive, isPending }) =>
               isPending
                 ? "pending"
@@ -181,7 +181,7 @@ const Navbar = () => {
                 : ""
             }
           >
-            login
+            Booklist
           </NavLink>
         </span>
       </div>

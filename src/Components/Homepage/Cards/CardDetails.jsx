@@ -1,11 +1,34 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import swal from "sweetalert";
 
 const CardDetails = () => {
   const eventID = useParams();
   const events = useLoaderData();
 
   const selectedEvent = events.find((event) => event.id == eventID.id);
-  const { title, image, price, booking, caption, description } = selectedEvent;
+  const { id, title, image, price, booking, caption, description } =
+    selectedEvent;
+
+  const handleBookingButton = () => {
+    const storedData = [];
+
+    const localStorageData = JSON.parse(localStorage.getItem("bookedEvents"));
+
+    if (!localStorageData) {
+      storedData.push(selectedEvent);
+      localStorage.setItem("bookedEvents", JSON.stringify(storedData));
+      swal("Event Booked Successfully!!", "Thank you for booking!", "success");
+    } else {
+      const isExist = localStorageData.find((data) => data.id == id);
+      if (isExist) {
+        swal("Already booked this event!!!", "Try another!", "error");
+      } else {
+        storedData.push(...localStorageData, selectedEvent);
+        localStorage.setItem("bookedEvents", JSON.stringify(storedData));
+        swal("Successfully booked!!!", "Thank you for booking!", "success");
+      }
+    }
+  };
 
   return (
     <div className="w-10/12 lg:max-w-screen-2xl mx-auto my-14 lg:my-24">
@@ -33,7 +56,10 @@ const CardDetails = () => {
             <span className="font-semibold text-sky-600">Description: </span>
             {description}
           </p>
-          <button className="my-5 px-5 py-2 bg-sky-500 hover:bg-sky-300 hover:text-black text-white font-semibold rounded-md">
+          <button
+            onClick={handleBookingButton}
+            className="my-5 px-5 py-2 bg-sky-500 hover:bg-sky-300 hover:text-black text-white font-semibold rounded-md"
+          >
             Book This Event
           </button>
         </div>

@@ -6,6 +6,7 @@ import Registration from "../Pages/Registration";
 import Login from "../Pages/Login";
 import UserProfile from "../Pages/UserProfile";
 import CardDetails from "../Components/Homepage/Cards/CardDetails";
+import BookedEvents from "../Pages/BookedEvents";
 
 const customRoutes = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const customRoutes = createBrowserRouter([
         path: "/services/:id",
         loader: () => fetch("/events.json"),
         element: <CardDetails></CardDetails>,
+      },
+      {
+        path: "/user/booked-events",
+        element: <BookedEvents></BookedEvents>,
       },
     ],
   },
