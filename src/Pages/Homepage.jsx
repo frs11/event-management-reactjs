@@ -6,7 +6,7 @@ import Stats from "../Components/Homepage/Stats";
 
 const Homepage = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto">
+    <div className="max-w-screen-2xl mx-auto bg-sky-100">
       <Banner></Banner>
       <Cards></Cards>
       <Stats></Stats>

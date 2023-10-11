@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import BookmarkedEvents from "../Components/Homepage/Cards/BookmarkedEvents";
+import { AuthContext } from "../Contexts/AuthProvider";
 
 const BookedEvents = () => {
-  const locallyStoredData = JSON.parse(localStorage.getItem("bookedEvents"));
+  const { user } = useContext(AuthContext);
+  const locallyStoredData = JSON.parse(localStorage.getItem(user.email));
   return (
-    <div>
+    <div className="bg-sky-100 border">
       {locallyStoredData ? (
         <div>
           <h1 className="text-center text-3xl lg:text-5xl my-20">

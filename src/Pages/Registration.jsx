@@ -1,14 +1,60 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { updateProfile } from "firebase/auth";
+import { AuthContext } from "../Contexts/AuthProvider";
+import { useContext } from "react";
+import swal from "sweetalert";
 
 const Registration = () => {
+  const { createNewUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const handleRegistration = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
-    const userFirstName = form.get("firstName");
-    const userLastName = form.get("lastName");
+    const userName = form.get("name");
+    const image = form.get("photourl");
     const userEmail = form.get("email");
     const userPassword = form.get("password");
-    console.log(userFirstName, userLastName, userEmail, userPassword);
+
+    if (userPassword.length < 6) {
+      e.target.reset();
+      return swal(
+        "Password should be more than 6 letters",
+        "Please try again",
+        "warning"
+      );
+    } else if (!/[A-Z]/.test(userPassword)) {
+      e.target.reset();
+      return swal(
+        "Password should have at least one capital letter",
+        "Please try again",
+        "warning"
+      );
+    } else if (!/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(userPassword)) {
+      e.target.reset();
+      return swal(
+        "Password should have at least one special character!",
+        "Please try again",
+        "warning"
+      );
+    }
+    createNewUser(userEmail, userPassword)
+      .then((res) => {
+        const user = res.user;
+        updateProfile(user, {
+          displayName: userName,
+          email: userEmail,
+          photoURL: image,
+        });
+        e.target.reset();
+        console.log(user);
+        swal("Congratulations!", "Signed Up Successfully!", "success");
+        navigate("/");
+      })
+      .catch((err) => {
+        e.target.reset();
+        console.log(err);
+      });
   };
   return (
     <div className="hero min-h-screen bg-base-900">
@@ -20,24 +66,12 @@ const Registration = () => {
           <form onSubmit={handleRegistration} className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">First Name</span>
+                <span className="label-text">Name</span>
               </label>
               <input
                 type="text"
-                placeholder="First Name"
-                name="firstName"
-                className="input input-bordered"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Last Name</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Last Name"
-                name="lastName"
+                placeholder="Name"
+                name="name"
                 className="input input-bordered"
                 required
               />
@@ -52,6 +86,19 @@ const Registration = () => {
                 name="email"
                 className="input input-bordered"
                 required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo url</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Photo url"
+                defaultValue="https://source.unsplash.com/random/200x200/?img=1"
+                name="photourl"
+                className="input input-bordered"
+                // required
               />
             </div>
             <div className="form-control">

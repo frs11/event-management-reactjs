@@ -7,6 +7,8 @@ import Login from "../Pages/Login";
 import UserProfile from "../Pages/UserProfile";
 import CardDetails from "../Components/Homepage/Cards/CardDetails";
 import BookedEvents from "../Pages/BookedEvents";
+import PrivateRoutes from "./PrivateRoutes";
+import PreventionRoute from "./PreventionRoute";
 
 const customRoutes = createBrowserRouter([
   {
@@ -20,24 +22,44 @@ const customRoutes = createBrowserRouter([
       },
       {
         path: "/registration",
-        element: <Registration></Registration>,
+        element: (
+          <PreventionRoute>
+            <Registration></Registration>
+          </PreventionRoute>
+        ),
       },
       {
         path: "/login",
-        element: <Login></Login>,
+        element: (
+          <PreventionRoute>
+            <Login></Login>
+          </PreventionRoute>
+        ),
       },
       {
         path: "/profile",
-        element: <UserProfile></UserProfile>,
+        element: (
+          <PrivateRoutes>
+            <UserProfile></UserProfile>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/services/:id",
         loader: () => fetch("/events.json"),
-        element: <CardDetails></CardDetails>,
+        element: (
+          <PrivateRoutes>
+            <CardDetails></CardDetails>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/user/booked-events",
-        element: <BookedEvents></BookedEvents>,
+        element: (
+          <PrivateRoutes>
+            <BookedEvents></BookedEvents>
+          </PrivateRoutes>
+        ),
       },
     ],
   },

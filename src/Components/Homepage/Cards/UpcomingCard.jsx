@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import "aos/dist/aos.css"; // Import AOS styles
+import AOS from "aos";
 
 const UpcomingCard = ({ event2 }) => {
   const { title, image, caption, price, description } = event2;
@@ -8,9 +10,22 @@ const UpcomingCard = ({ event2 }) => {
   const handleReadMe = () => {
     setDescriptionLength(description.length);
   };
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      offset: 150,
+    });
+    AOS.init({
+      startEvent: "onReveal",
+    });
+    AOS.refresh();
+
+    return AOS.refreshHard();
+  }, []);
 
   return (
-    <div className="bg-sky-100 rounded-sm shadow-xl">
+    <div data-aos="zoom-in" className="bg-sky-100 rounded-sm shadow-xl">
       <div className="border-2 rounded-3xl">
         <img className="h-[230px] w-full" src={image} alt="" />
       </div>

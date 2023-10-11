@@ -5,11 +5,16 @@ import { AuthContext } from "../../Contexts/AuthProvider";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const isActiveRoute = useParams();
-  const { events } = useContext(AuthContext);
+  const { events, user, userSignOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogin = () => {
     navigate("/login");
+  };
+  const handleLogout = () => {
+    userSignOut()
+      .then(navigate("/login"))
+      .catch((err) => console.log(err.message));
   };
 
   return (
@@ -71,7 +76,11 @@ const Navbar = () => {
                 </NavLink>
               </div>
             ))}
-            <span className="block mx-1 my-1 px-2 rounded-md py-1">
+            <span
+              className={
+                user ? "block mx-1 my-1 px-2 rounded-md py-1" : "hidden"
+              }
+            >
               <NavLink
                 to="/profile"
                 className={({ isActive, isPending }) =>
@@ -85,7 +94,11 @@ const Navbar = () => {
                 Profile
               </NavLink>
             </span>
-            <span className="block mx-1 my-1 px-2 rounded-md py-1">
+            <span
+              className={
+                user ? "block mx-1 my-1 px-2 rounded-md py-1" : "hidden"
+              }
+            >
               <NavLink
                 to="/user/booked-events"
                 className={({ isActive, isPending }) =>
@@ -96,7 +109,7 @@ const Navbar = () => {
                     : ""
                 }
               >
-                Booklist
+                BookedList
               </NavLink>
             </span>
           </ul>
@@ -156,7 +169,11 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <span className="flex mx-2 py-1 font-semibold hover:text-sky-600">
+        <span
+          className={
+            user ? "flex mx-2 py-1 font-semibold hover:text-sky-600" : "hidden"
+          }
+        >
           <NavLink
             to="/profile"
             className={({ isActive, isPending }) =>
@@ -170,7 +187,11 @@ const Navbar = () => {
             Profile
           </NavLink>
         </span>
-        <span className="flex mx-2 py-1 font-semibold hover:text-sky-600">
+        <span
+          className={
+            user ? "flex mx-2 py-1 font-semibold hover:text-sky-600" : "hidden"
+          }
+        >
           <NavLink
             to="/user/booked-events"
             className={({ isActive, isPending }) =>
@@ -186,17 +207,40 @@ const Navbar = () => {
         </span>
       </div>
       <div className="navbar-end">
-        <img
-          className="w-6 lg:w-12 mr-3"
-          src="https://i.ibb.co/By0YFNn/default-profile-picture-grey-male-icon.png"
-          alt=""
-        />
-        <button
-          onClick={handleLogin}
-          className="px-5 py-2 bg-sky-500 text-white rounded-md"
-        >
-          Sign In
-        </button>
+        {user ? (
+          <div className="flex items-center space-x-3">
+            <div className="">
+              <img
+                className="w-10 h-10 rounded-full ml-2"
+                src={user.photoURL}
+                alt=""
+              />
+              <p className="text-xs font-logoFont text-center">
+                {user.displayName}
+              </p>
+            </div>
+            <button
+              onClick={handleLogout}
+              className="px-5 py-2 bg-sky-500 hover:bg-sky-300 hover:text-black text-white rounded-md"
+            >
+              Sign Out
+            </button>
+          </div>
+        ) : (
+          <div className="flex items-center">
+            <img
+              className="w-10 h-10 rounded-full mr-3"
+              src="https://i.ibb.co/By0YFNn/default-profile-picture-grey-male-icon.png"
+              alt=""
+            />
+            <button
+              onClick={handleLogin}
+              className="px-5 py-2 bg-sky-500 hover:bg-sky-300 hover:text-black text-white rounded-md"
+            >
+              Sign In
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
