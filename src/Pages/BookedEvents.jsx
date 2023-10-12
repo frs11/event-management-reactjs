@@ -6,7 +6,7 @@ const BookedEvents = () => {
   const { user } = useContext(AuthContext);
   const locallyStoredData = JSON.parse(localStorage.getItem(user.email));
   return (
-    <div className="bg-sky-100 border">
+    <div className="bg-sky-100 border min-h-[90vh]">
       {locallyStoredData ? (
         <div>
           <h1 className="text-center text-3xl lg:text-5xl my-20">
