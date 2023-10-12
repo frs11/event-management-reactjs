@@ -4,7 +4,7 @@ A beautiful website for the event management company.
 
 ## Website Live Link
 
-[Eventers](www.google.com)
+[Eventers](https://eventers.netlify.app/)
 
 ## Features
 

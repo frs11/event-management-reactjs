@@ -6,8 +6,8 @@ const Footer = () => {
   const { events } = useContext(AuthContext);
   return (
     <div>
-      <footer className="bg-base-300">
-        <div className="footer border p-4 lg:p-10 max-w-screen-xl mx-auto text-base-content flex justify-around">
+      <footer className="bg-gray-900">
+        <div className="footer p-4 lg:p-10 max-w-screen-xl mx-auto text-gray-400 flex justify-around">
           <nav>
             <header className="footer-title text-base lg:text-xl">
               Services
@@ -84,13 +84,13 @@ const Footer = () => {
           </nav>
         </div>
       </footer>
-      <div className="footer footer-center pb-5 -mt-2 lg:-mt-5 bg-base-300 text-xs lg:text-base">
+      <div className="footer footer-center pb-5 -mt-2 lg:-mt-5 bg-gray-900 text-xs lg:text-base text-gray-400">
         <aside>
           <p>
             Copyright © 2023 - All right reserved by{" "}
-            <span className="text-lg font-semibold text-stone-800 hover:text-blue-900 hover:underline ">
+            <span className="text-lg font-semibold text-stone-400 hover:text-blue-900 hover:underline ">
               <span className="font-logoFont font-medium">
-                Even<span className="text-sky-600">ters</span>
+                Even<span className="text-sky-500">ters</span>
               </span>
             </span>
           </p>
