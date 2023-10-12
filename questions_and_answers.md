@@ -18,9 +18,9 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: A
 
-<i>Write your explanation here</i>
+<i>The answer is option A. Because at first we declared a variable called greeting. Then we assigned an empty object in a variable that hasn't been declared yet. But the modern javascript will make it a global variable and give an empty object as an output.</i>
 
 </p>
 </details>
@@ -43,9 +43,9 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: C: '12'
 
-<i>Write your explanation here</i>
+<i>Here we have a function which take 2 numbers as parameters and return their sum. However the is a number 1 and a string '2' as a parameter. Javascript will match their type and convert 1 to a string and concatinate string 1 & 2. Thus comes result "12" </i>
 
 </p>
 </details>
@@ -69,9 +69,9 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: A
 
-<i>Write your explanation here</i>
+<i>Since it is not directly referencing, that means changing the value of info.favorite property will not change the original value of food object. Therefore answer is A </i>
 
 </p>
 </details>
@@ -94,9 +94,9 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: B
 
-<i>Write your explanation here</i>
+<i>When calling the function, it's expecting a parameter which was never given while calling the function. Which will print the string as Hi there, undefined</i>
 
 </p>
 </details>
@@ -122,9 +122,9 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: C
 
-<i>Write your explanation here</i>
+<i>Here nums array has 4 element. By using forEach() we get a value of an index. then we are checking if that value is truthy or falsy. If the value is truthy, then the value of count increases by 1. Since zero is the only falsy value among them, that means final count value will be 3 </i>
 
 </p>
 </details>
